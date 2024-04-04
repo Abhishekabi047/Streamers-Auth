@@ -13,4 +13,6 @@ type UserRepo interface {
 	GetSignupByPhone(string) (*models.Signup, error)
 	Update(*models.Channel) error
 	CheckPermission(*models.Channel) (bool,error)
+	SearchUserName( string,int, int) ([]models.Channel,error) 
+	UserExistsByUsername( string) (bool, error) 
 }

@@ -24,10 +24,10 @@ type Channel struct {
 }
 
 type Signup struct {
-	UserName string `json:"username"`
-	Email    string `json:"email"`
-	Password string `json:"password"`
-	Phone    string `json:"phone"`
+	UserName string `json:"username" validate:"required"`
+	Email    string `json:"email" validate:"required,email"`
+	Password string `json:"password" validate:"required"`
+	Phone    string `json:"phone" validate:"required,len=10,numeric" `
 	Category string `json:"Category"`
-	DOB      string `json:"dob"`
+	DOB      string `json:"dob" validate:"required"`
 }
